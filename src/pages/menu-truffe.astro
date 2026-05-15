@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Menu Truffe — Une Escale Gourmande",
+  "description": "Menu truffe en 5 temps autour des truffes noires melanosporum du Périgord, récoltées dans la truffière personnelle de Benjamin Jardin. Disponible de décembre à fin février.",
+  "url": "https://uneescalegourmande.fr/menu-truffe",
+  "inLanguage": "fr",
+  "provider": {
+    "@type": "FoodEstablishment",
+    "name": "Une Escale Gourmande",
+    "telephone": "+33625142608",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Eyzerac",
+      "postalCode": "24800",
+      "addressCountry": "FR"
+    }
+  }
+};
+---
+
+<Layout
+  title="Menu Truffe Périgord — Truffes noires melanosporum | Une Escale Gourmande Eyzerac"
+  description="Menu truffe en 5 temps à Eyzerac, Périgord Vert. Truffes noires melanosporum récoltées dans notre propre truffière. Table d'hôte et chef à domicile, de décembre à fin février."
+  image="/images/table-dressee-truffe.jpg"
+  schema={schema}
+>
+  <!-- HERO -->
+  <section class="relative h-[75vh] min-h-[500px] flex items-end overflow-hidden">
+    <img src="/images/table-dressee-truffe.jpg" alt="Table dressée pour le menu truffe" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 pb-16 w-full">
+      <p class="text-white/70 text-sm uppercase tracking-widest mb-2">Décembre · Janvier · Février</p>
+      <h1 class="font-serif text-4xl md:text-6xl text-white leading-tight">Menu Truffe</h1>
+      <p class="text-white/80 mt-3 text-xl font-light">Un voyage en 5 temps autour de la truffe noire du Périgord</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="max-w-3xl mx-auto px-4 py-20 text-center">
+    <p class="text-sm uppercase tracking-widest text-[#4a7c59] mb-4">Tuber melanosporum</p>
+    <h2 class="font-serif text-3xl md:text-4xl mb-6">Notre propre truffière</h2>
+    <p class="text-lg text-stone-600 leading-relaxed">
+      Découvrez notre menu truffe en 5 temps — une expérience gourmande imaginée autour des truffes noires du Périgord récoltées dans <strong>notre propre truffière</strong>. À travers des associations originales et une cuisine généreuse, chaque assiette révèle toute la finesse et le caractère de la truffe noire melanosporum.
+    </p>
+  </section>
+
+  <!-- TRUFFE EN IMAGE -->
+  <section class="max-w-5xl mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <img src="/images/truffe-fraiche.jpg" alt="Truffe noire fraîchement récoltée au Périgord" class="w-full aspect-[4/3] object-cover" />
+        <p class="text-xs text-stone-400 mt-2 text-center">Truffe noire melanosporum fraîchement récoltée</p>
+      </div>
+      <div class="space-y-5 text-stone-700 leading-relaxed">
+        <h3 class="font-serif text-2xl text-[#4a7c59]">La truffe, du sol à l'assiette</h3>
+        <p>
+          Benjamin ramasse lui-même ses truffes. Ce lien direct entre la terre et la cuisine est au cœur de sa démarche : connaître chaque truffe, respecter son caractère, l'associer avec justesse.
+        </p>
+        <p>
+          La truffe noire melanosporum du Périgord est récoltée <strong>de décembre à fin février</strong>. C'est dans cette fenêtre courte que Benjamin propose son menu, quand le produit est à son meilleur.
+        </p>
+        <p>
+          <em>« La truffe a un goût unique, proche de la terre. C'est un produit d'exception qui doit être traité avec délicatesse. »</em>
+          <span class="block text-sm text-stone-400 mt-1">— Benjamin Jardin, France Bleu Périgord</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU 5 TEMPS -->
+  <section class="bg-[#1a1a1a] text-white py-20">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <p class="text-sm uppercase tracking-widest text-stone-400 mb-3">L'expérience</p>
+      <h2 class="font-serif text-3xl md:text-4xl mb-12">Menu en 5 temps</h2>
+      <div class="space-y-8 text-left">
+        {[
+          { num: "01", label: "Amuse-bouche", desc: "Mise en bouche autour de la truffe — première approche du produit" },
+          { num: "02", label: "Entrée", desc: "Associations végétales et produits du terroir périgourdin rehaussés de truffe" },
+          { num: "03", label: "Intermezzo", desc: "Pause fraîche et aromatique entre les temps forts" },
+          { num: "04", label: "Plat principal", desc: "Le cœur du menu — la truffe en vedette, avec les produits locaux de saison" },
+          { num: "05", label: "Dessert", desc: "Une création sucrée où la truffe révèle sa dimension la plus inattendue" },
+        ].map(item => (
+          <div class="flex gap-6 items-start border-b border-white/10 pb-8 last:border-0">
+            <span class="font-serif text-5xl text-white/20 leading-none flex-shrink-0">{item.num}</span>
+            <div>
+              <h3 class="font-serif text-xl mb-1">{item.label}</h3>
+              <p class="text-stone-400 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-stone-500 text-sm mt-10">Menu sur réservation · Le menu change selon la récolte et la saison</p>
+    </div>
+  </section>
+
+  <!-- GALERIE PLATS TRUFFE -->
+  <section class="py-20 max-w-5xl mx-auto px-4">
+    <h2 class="font-serif text-2xl text-center mb-10">Quelques créations autour de la truffe</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="/images/plateau-fromage-truffe.jpg" alt="Plateau fromage à la truffe" class="w-full aspect-square object-cover" />
+      <img src="/images/verrine-chocolat.webp" alt="Verrine chocolat truffe" class="w-full aspect-square object-cover" />
+      <img src="/images/truffe-cuisson.jpg" alt="Truffe en cuisine" class="w-full aspect-square object-cover" />
+      <img src="/images/dessert-myrtille-2.webp" alt="Dessert créatif" class="w-full aspect-square object-cover" />
+      <img src="/images/plat-legumes.webp" alt="Plat végétal" class="w-full aspect-square object-cover" />
+      <img src="/images/dessert-fraise.jpg" alt="Dessert de saison" class="w-full aspect-square object-cover" />
+    </div>
+  </section>
+
+  <!-- DEUX FORMULES -->
+  <section class="bg-[#f0ebe3] py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-serif text-2xl text-center mb-10">Deux façons de vivre l'expérience</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8">
+          <h3 class="font-serif text-xl mb-3">Table d'hôte à Eyzerac</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Venez dîner chez Benjamin, à la table d'hôte. Une soirée intime autour de la truffe, dans l'ambiance chaleureuse de la maison. Réservation obligatoire.
+          </p>
+          <p class="text-stone-400 text-xs mt-3">Sur réservation · Décembre à février</p>
+        </div>
+        <div class="bg-white p-8">
+          <h3 class="font-serif text-xl mb-3">Chef à domicile</h3>
+          <p class="text-stone-600 text-sm leading-relaxed">
+            Benjamin se déplace chez vous pour préparer et servir le menu truffe dans votre cadre. Périgord, Corrèze ou Haute-Vienne, dans un rayon de 40 km autour de Thiviers.
+          </p>
+          <p class="text-stone-400 text-xs mt-3">Zone 40 km autour de Thiviers · Sur devis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 text-center px-4">
+    <h2 class="font-serif text-3xl mb-4">Réserver le menu truffe</h2>
+    <p class="text-stone-600 mb-3 max-w-xl mx-auto">Disponible de décembre à fin février, sur réservation uniquement.</p>
+    <p class="text-stone-500 text-sm mb-8">Places limitées — Benjamin recommande de réserver à l'avance.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:+33625142608" class="inline-block bg-[#1a1a1a] text-white px-8 py-3 hover:bg-[#333] transition-colors">06 25 14 26 08</a>
+      <a href="/contact" class="inline-block border border-[#1a1a1a] text-[#1a1a1a] px-8 py-3 hover:bg-[#1a1a1a] hover:text-white transition-colors">Formulaire de contact</a>
+    </div>
+  </section>
+</Layout>

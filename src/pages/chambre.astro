@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Chambre d'hôte — Une Escale Gourmande",
+  "description": "Suite indépendante au cœur du Périgord Vert. Terrasse privée, douche à l'italienne, petit-déjeuner inclus. 66€ pour deux personnes.",
+  "url": "https://uneescalegourmande.fr/chambre",
+  "telephone": "+33625142608",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1144 route des calvaires",
+    "addressLocality": "Eyzerac",
+    "postalCode": "24800",
+    "addressCountry": "FR"
+  },
+  "priceRange": "66€ / nuit pour 2 personnes",
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Terrasse privée", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Douche à l'italienne", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Télévision HD", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Réfrigérateur", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Petit-déjeuner inclus", "value": true}
+  ]
+};
+---
+
+<Layout
+  title="Chambre d'hôte Périgord Vert — Suite avec terrasse à Eyzerac | Une Escale Gourmande"
+  description="Suite indépendante en Périgord Vert. Terrasse privée, douche à l'italienne, petit-déjeuner maison inclus. 66€ pour deux personnes. Dîner en option à 19€/personne."
+  image="/images/chambre-lit-ete.jpg"
+  schema={schema}
+>
+  <!-- HERO -->
+  <section class="relative h-[65vh] min-h-[450px] flex items-end overflow-hidden">
+    <img src="/images/chambre-lit-ete.jpg" alt="Chambre d'hôte Périgord Vert" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 pb-12 w-full">
+      <p class="text-white/70 text-sm uppercase tracking-widest mb-2">Séjour</p>
+      <h1 class="font-serif text-4xl md:text-5xl text-white">Chambre d'hôte</h1>
+      <p class="text-white/80 mt-2 text-lg font-light">Suite indépendante · Périgord Vert</p>
+    </div>
+  </section>
+
+  <!-- DESCRIPTION + TARIF -->
+  <section class="max-w-5xl mx-auto px-4 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="font-serif text-2xl mb-6">Un havre de paix en pleine nature</h2>
+        <div class="space-y-4 text-stone-700 leading-relaxed">
+          <p>
+            Suite indépendante au cœur du Périgord Vert, dans un écrin de verdure. Vous serez au calme, au milieu de la nature, avec une <strong>terrasse privée</strong> pour les beaux jours.
+          </p>
+          <p>
+            La chambre dispose d'une <strong>grande douche à l'italienne</strong> et d'une salle d'eau avec toilettes indépendantes. Tout le confort est réuni pour un séjour ressourçant.
+          </p>
+          <p>
+            Le <strong>petit-déjeuner maison</strong> est inclus dans le tarif — préparé avec soin par Benjamin, il donne le ton d'une journée gourmande.
+          </p>
+          <p>
+            Sur demande, Benjamin peut vous préparer un <strong>dîner sur place</strong> (+19€/personne) : cuisine engagée, produits locaux, menu selon la saison.
+          </p>
+        </div>
+
+        <!-- TARIF -->
+        <div class="mt-10 bg-[#f0ebe3] p-6 border-l-4 border-[#4a7c59]">
+          <h3 class="font-serif text-xl mb-4">Tarifs</h3>
+          <div class="space-y-2 text-stone-700">
+            <div class="flex justify-between items-center">
+              <span>Chambre pour 2 personnes + petit-déjeuner</span>
+              <span class="font-bold text-lg">66 €</span>
+            </div>
+            <div class="flex justify-between items-center text-sm text-stone-500">
+              <span>Dîner en option (par personne)</span>
+              <span class="font-medium">+ 19 €</span>
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 mt-4">Tarif par nuit · Petit-déjeuner inclus · Réservation par téléphone ou WhatsApp</p>
+        </div>
+
+        <a href="/contact" class="inline-block mt-8 bg-[#4a7c59] text-white px-8 py-3 hover:bg-[#3d6b4c] transition-colors">
+          Réserver
+        </a>
+      </div>
+
+      <!-- PHOTOS -->
+      <div class="space-y-4">
+        <img src="/images/chambre-lit-hiver.jpg" alt="Chambre d'hôte vue jardin" class="w-full aspect-[4/3] object-cover" />
+        <div class="grid grid-cols-2 gap-4">
+          <img src="/images/terrasse-salon-bleu.jpeg" alt="Terrasse privée" class="w-full aspect-square object-cover" />
+          <img src="/images/exterieur-jardin.jpeg" alt="Jardin et extérieur" class="w-full aspect-square object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÉQUIPEMENTS -->
+  <section class="bg-white py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-serif text-2xl text-center mb-10">Équipements</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        {[
+          { icon: "🌿", label: "Terrasse privée" },
+          { icon: "🚿", label: "Douche à l'italienne" },
+          { icon: "📺", label: "Télévision HD" },
+          { icon: "🎲", label: "Jeux de société" },
+          { icon: "❄️", label: "Réfrigérateur" },
+          { icon: "🔁", label: "Micro-onde" },
+          { icon: "☕", label: "Petit-déjeuner inclus" },
+          { icon: "🍽️", label: "Dîner en option" },
+        ].map(item => (
+          <div class="p-4">
+            <div class="text-3xl mb-2">{item.icon}</div>
+            <p class="text-sm text-stone-600">{item.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE EXTÉRIEUR -->
+  <section class="py-16 max-w-5xl mx-auto px-4">
+    <h2 class="font-serif text-2xl text-center mb-10">Le domaine</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <img src="/images/panneau-chambre-hotes.jpeg" alt="Entrée chambre d'hôte" class="w-full aspect-[4/3] object-cover" />
+      <img src="/images/exterieur-maison.jpeg" alt="Extérieur de la propriété" class="w-full aspect-[4/3] object-cover" />
+      <img src="/images/jardin-mur-pierre.jpeg" alt="Jardin en pierre" class="w-full aspect-[4/3] object-cover" />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#f0ebe3] py-16 text-center px-4">
+    <h2 class="font-serif text-2xl mb-4">Envie de séjourner à l'Escale Gourmande ?</h2>
+    <p class="text-stone-600 mb-8">Contactez Benjamin directement par téléphone ou WhatsApp.</p>
+    <a href="tel:+33625142608" class="inline-block bg-[#4a7c59] text-white px-8 py-3 hover:bg-[#3d6b4c] transition-colors">
+      06 25 14 26 08
+    </a>
+  </section>
+</Layout>

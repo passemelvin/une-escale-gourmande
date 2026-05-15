@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BedAndBreakfast",
+  "name": "Une Escale Gourmande",
+  "description": "Chambre d'hôte, traiteur et chef à domicile au cœur du Périgord Vert. Benjamin Jardin, cuisinier de métier depuis 20 ans.",
+  "url": "https://uneescalegourmande.fr",
+  "telephone": "+33625142608",
+  "email": "jardinbenjamin@hotmail.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1144 route des calvaires",
+    "addressLocality": "Eyzerac",
+    "postalCode": "24800",
+    "addressCountry": "FR",
+    "addressRegion": "Dordogne"
+  },
+  "image": "https://uneescalegourmande.fr/images/chemin-campagne.jpeg",
+  "priceRange": "€€",
+  "servesCuisine": ["Française", "Gastronomique", "Périgord"]
+};
+---
+
+<Layout
+  title="Une Escale Gourmande — Chambre d'hôte & Traiteur à Eyzerac, Périgord Vert"
+  description="Benjamin Jardin vous accueille à Eyzerac en Périgord Vert. Chambre d'hôte avec petit-déjeuner, traiteur pour vos événements, chef à domicile et menu truffe de sa propre truffière."
+  schema={schema}
+>
+  <!-- HERO -->
+  <section class="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+    <img
+      src="/images/chemin-campagne.jpeg"
+      alt="Chemin de campagne en Périgord Vert"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
+      <img src="/images/logo.svg" alt="Une Escale Gourmande" class="h-24 w-auto mx-auto mb-6 invert" />
+      <h1 class="font-serif text-4xl md:text-6xl font-bold mb-4 leading-tight">
+        Une Escale Gourmande
+      </h1>
+      <p class="text-xl md:text-2xl font-light mb-2 tracking-wide">Périgord Vert · Eyzerac</p>
+      <p class="text-lg font-light mb-10 opacity-90">Chambre d'hôte · Traiteur · Chef à domicile · Menu Truffe</p>
+      <a href="/contact" class="inline-block bg-white text-[#1a1a1a] px-8 py-3 font-medium tracking-widest uppercase text-sm hover:bg-[#4a7c59] hover:text-white transition-colors">
+        Réserver
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="max-w-3xl mx-auto px-4 py-20 text-center">
+    <h2 class="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6">Bienvenue dans notre écrin de verdure</h2>
+    <p class="text-lg text-stone-600 leading-relaxed">
+      Au cœur du Périgord Vert, Benjamin Jardin — cuisinier de métier depuis 20 ans — vous propose une halte gourmande au fil des saisons. Chambre d'hôte, dîners sur place, traiteur pour vos événements ou chef à domicile : chaque prestation est pensée autour de produits locaux soigneusement sélectionnés, du potager et de la truffière.
+    </p>
+  </section>
+
+  <!-- 3 ACTIVITÉS -->
+  <section class="bg-white py-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+        <a href="/chambre" class="group relative overflow-hidden" style="aspect-ratio:4/5">
+          <img src="/images/chambre-lit-ete.jpg" alt="Chambre d'hôte Périgord Vert" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-serif text-2xl mb-2">Chambre d'hôte</h3>
+            <p class="text-sm opacity-90 font-light">Suite indépendante avec terrasse privée</p>
+            <span class="inline-block mt-3 text-xs tracking-widest uppercase border-b border-white pb-0.5">Découvrir →</span>
+          </div>
+        </a>
+        <a href="/traiteur" class="group relative overflow-hidden" style="aspect-ratio:4/5">
+          <img src="/images/traiteur-assiettes.jpg" alt="Traiteur Dordogne" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-black/45 group-hover:bg-black/55 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-serif text-2xl mb-2">Traiteur & Chef à domicile</h3>
+            <p class="text-sm opacity-90 font-light">Mariages, baptêmes, repas d'entreprise...</p>
+            <span class="inline-block mt-3 text-xs tracking-widest uppercase border-b border-white pb-0.5">Découvrir →</span>
+          </div>
+        </a>
+        <a href="/menu-truffe" class="group relative overflow-hidden" style="aspect-ratio:4/5">
+          <img src="/images/truffe-fraiche.jpg" alt="Menu truffe Périgord" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-serif text-2xl mb-2">Menu Truffe</h3>
+            <p class="text-sm opacity-90 font-light">Décembre à février · Truffière personnelle</p>
+            <span class="inline-block mt-3 text-xs tracking-widest uppercase border-b border-white pb-0.5">Découvrir →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE PLATS -->
+  <section class="py-20 max-w-6xl mx-auto px-4">
+    <h2 class="font-serif text-3xl text-center mb-12">Une cuisine gourmande et engagée</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <img src="/images/dessert-myrtille.jpg" alt="Dessert myrtille" class="w-full aspect-square object-cover" />
+      <img src="/images/entree-oeuf-jambon.jpg" alt="Entrée raffinée" class="w-full aspect-square object-cover" />
+      <img src="/images/dessert-tarte-fruits.jpg" alt="Tarte aux fruits rouges" class="w-full aspect-square object-cover" />
+      <img src="/images/amuse-bouches.jpg" alt="Amuse-bouches" class="w-full aspect-square object-cover" />
+    </div>
+  </section>
+
+  <!-- MÉDIAS -->
+  <section class="bg-[#f0ebe3] py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-sm uppercase tracking-widest text-stone-500 mb-8">Ils parlent de nous</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+        <a href="https://www.ici.fr/emissions/l-art-de-vivre-en-perigord/a-eyzerac-une-table-d-hotes-celebre-la-truffe-avec-creativite-et-passion-4440710" target="_blank" rel="noopener" class="flex items-center gap-3 bg-white px-6 py-4 shadow-sm hover:shadow-md transition-shadow w-full sm:w-auto justify-center">
+          <span class="font-bold text-[#e2001a] text-lg">France Bleu</span>
+          <span class="text-stone-600 text-sm">L'Art de Vivre en Périgord</span>
+        </a>
+        <a href="https://www.france.tv/france-3/nouvelle-aquitaine/le-gout-des-rencontres-nouvelle-aquitaine/7490948-etonnant-dessert-au-chocolat-en-dordogne.html" target="_blank" rel="noopener" class="flex items-center gap-3 bg-white px-6 py-4 shadow-sm hover:shadow-md transition-shadow w-full sm:w-auto justify-center">
+          <span class="font-bold text-[#003189] text-lg">France 3</span>
+          <span class="text-stone-600 text-sm">Le Goût des Rencontres</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 text-center px-4">
+    <h2 class="font-serif text-3xl mb-4">Une question ? Une réservation ?</h2>
+    <p class="text-stone-600 mb-8">Benjamin répond rapidement par téléphone ou WhatsApp.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="tel:+33625142608" class="inline-block bg-[#4a7c59] text-white px-8 py-3 hover:bg-[#3d6b4c] transition-colors">06 25 14 26 08</a>
+      <a href="/contact" class="inline-block border border-[#4a7c59] text-[#4a7c59] px-8 py-3 hover:bg-[#4a7c59] hover:text-white transition-colors">Formulaire de contact</a>
+    </div>
+  </section>
+</Layout>
