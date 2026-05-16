@@ -114,26 +114,32 @@ const schema = {
     <div class="max-w-4xl mx-auto px-4">
       <h2 class="font-serif text-2xl text-center mb-10">Deux façons de vivre l'expérience</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white overflow-hidden">
-          <img src="/images/plateau-fromage-truffe.jpg" alt="Plateau fromage à la truffe" class="w-full aspect-[4/3] object-cover" />
+        <a href="/chambre" class="group bg-white overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="overflow-hidden">
+            <img src="/images/plateau-fromage-truffe.jpg" alt="Plateau fromage à la truffe" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
           <div class="p-8">
             <h3 class="font-serif text-xl mb-3">Table d'hôte à Eyzerac</h3>
             <p class="text-stone-600 text-sm leading-relaxed">
               Venez dîner chez Benjamin, à la table d'hôte. Une soirée intime autour de la truffe, dans l'ambiance chaleureuse de la maison. Réservation obligatoire.
             </p>
             <p class="text-stone-400 text-xs mt-3">Sur réservation · Décembre à février</p>
+            <span class="inline-block mt-4 text-sm text-[#2d6a4f] font-medium group-hover:underline">Voir la chambre d'hôte →</span>
           </div>
-        </div>
-        <div class="bg-white overflow-hidden">
-          <img src="/images/verrine-chocolat.webp" alt="Verrine chocolat truffe" class="w-full aspect-[4/3] object-cover" />
+        </a>
+        <a href="/traiteur" class="group bg-white overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="overflow-hidden">
+            <img src="/images/verrine-chocolat.webp" alt="Verrine chocolat truffe" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
           <div class="p-8">
             <h3 class="font-serif text-xl mb-3">Chef à domicile</h3>
             <p class="text-stone-600 text-sm leading-relaxed">
               Benjamin se déplace chez vous pour préparer et servir le menu truffe dans votre cadre. Périgord, Corrèze ou Haute-Vienne, dans un rayon de 40 km autour de Thiviers.
             </p>
             <p class="text-stone-400 text-xs mt-3">Zone 40 km autour de Thiviers · Sur devis</p>
+            <span class="inline-block mt-4 text-sm text-[#2d6a4f] font-medium group-hover:underline">Voir le service traiteur →</span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
