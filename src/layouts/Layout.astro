@@ -124,8 +124,11 @@ const mapsURL = "https://www.google.com/maps/search/?api=1&query=1144+route+des+
 
     <!-- Lightbox -->
     <div id="lightbox" class="hidden fixed inset-0 z-[200] bg-black/92 flex items-center justify-center" role="dialog" aria-modal="true">
-      <button id="lb-close" class="absolute top-5 right-6 text-white text-5xl font-thin leading-none hover:text-stone-300 transition-colors" aria-label="Fermer">✕</button>
-      <img id="lb-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain select-none" />
+      <button id="lb-close" class="absolute top-5 right-6 text-white text-5xl font-thin leading-none hover:text-stone-300 transition-colors z-10" aria-label="Fermer">✕</button>
+      <button id="lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-5xl font-thin leading-none hover:text-stone-300 transition-colors z-10 px-3 py-2" aria-label="Précédent">‹</button>
+      <button id="lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-5xl font-thin leading-none hover:text-stone-300 transition-colors z-10 px-3 py-2" aria-label="Suivant">›</button>
+      <img id="lb-img" src="" alt="" class="max-h-[90vh] max-w-[80vw] object-contain select-none" />
+      <p id="lb-counter" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/50 text-sm"></p>
     </div>
 
     <script>
@@ -149,29 +152,52 @@ const mapsURL = "https://www.google.com/maps/search/?api=1&query=1144+route+des+
         revealObserver.observe(el);
       });
 
-      // Lightbox
+      // Lightbox avec navigation
       const lightbox = document.getElementById('lightbox') as HTMLElement | null;
       const lbImg = document.getElementById('lb-img') as HTMLImageElement | null;
+      const lbCounter = document.getElementById('lb-counter') as HTMLElement | null;
 
-      document.querySelectorAll<HTMLImageElement>('main img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => {
-          if (!lightbox || !lbImg) return;
-          lbImg.src = img.src;
-          lbImg.alt = img.alt;
-          lightbox.classList.remove('hidden');
-          document.body.style.overflow = 'hidden';
-        });
-      });
+      const allImgs = Array.from(document.querySelectorAll<HTMLImageElement>('main img'));
+      let currentIdx = 0;
+
+      function showImg(idx: number) {
+        if (!lbImg || !lbCounter) return;
+        currentIdx = (idx + allImgs.length) % allImgs.length;
+        lbImg.src = allImgs[currentIdx].src;
+        lbImg.alt = allImgs[currentIdx].alt;
+        lbCounter.textContent = `${currentIdx + 1} / ${allImgs.length}`;
+      }
+
+      function openLb(idx: number) {
+        if (!lightbox) return;
+        showImg(idx);
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
 
       function closeLb() {
         lightbox?.classList.add('hidden');
         document.body.style.overflow = '';
       }
 
+      allImgs.forEach((img, idx) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openLb(idx));
+      });
+
       document.getElementById('lb-close')?.addEventListener('click', closeLb);
+      document.getElementById('lb-prev')?.addEventListener('click', (e) => { e.stopPropagation(); showImg(currentIdx - 1); });
+      document.getElementById('lb-next')?.addEventListener('click', (e) => { e.stopPropagation(); showImg(currentIdx + 1); });
+
       lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+      document.addEventListener('keydown', e => {
+        if (!lightbox?.classList.contains('hidden')) {
+          if (e.key === 'Escape') closeLb();
+          if (e.key === 'ArrowLeft') showImg(currentIdx - 1);
+          if (e.key === 'ArrowRight') showImg(currentIdx + 1);
+        }
+      });
     </script>
   </body>
 </html>
