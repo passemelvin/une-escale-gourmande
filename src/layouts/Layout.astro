@@ -8,8 +8,9 @@ interface Props {
   schema?: object;
 }
 
-const { title, description, image = '/images/hero-chemin.jpg', schema } = Astro.props;
+const { title, description, image = '/images/terrasse-dejeuner.jpg', schema } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const mapsURL = "https://www.google.com/maps/search/?api=1&query=1144+route+des+calvaires+24800+Eyzerac";
 ---
 
 <!doctype html>
@@ -42,7 +43,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
   <body>
     <!-- Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#f8f4ee]/95 backdrop-blur-sm border-b border-stone-200">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#f5f0e6]/95 backdrop-blur-sm border-b border-stone-200">
       <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" class="flex items-center gap-3">
           <img src="/images/logo.svg" alt="Une Escale Gourmande" class="h-12 w-auto" />
@@ -54,27 +55,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <span class="block w-6 h-0.5 bg-stone-700"></span>
         </button>
         <ul id="nav-links" class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wide uppercase">
-          <li><a href="/" class="hover:text-[#4a7c59] transition-colors">Accueil</a></li>
-          <li><a href="/benjamin" class="hover:text-[#4a7c59] transition-colors">Le Chef</a></li>
-          <li><a href="/chambre" class="hover:text-[#4a7c59] transition-colors">Chambre</a></li>
-          <li><a href="/traiteur" class="hover:text-[#4a7c59] transition-colors">Traiteur</a></li>
-          <li><a href="/menu-truffe" class="hover:text-[#4a7c59] transition-colors">Menu Truffe</a></li>
+          <li><a href="/" class="hover:text-[#2d6a4f] transition-colors">Accueil</a></li>
+          <li><a href="/benjamin" class="hover:text-[#2d6a4f] transition-colors">Le Chef</a></li>
+          <li><a href="/chambre" class="hover:text-[#2d6a4f] transition-colors">Chambre</a></li>
+          <li><a href="/traiteur" class="hover:text-[#2d6a4f] transition-colors">Traiteur</a></li>
+          <li><a href="/menu-truffe" class="hover:text-[#2d6a4f] transition-colors">Menu Truffe</a></li>
           <li>
-            <a href="/contact" class="bg-[#4a7c59] text-white px-4 py-2 rounded-sm hover:bg-[#3d6b4c] transition-colors">
+            <a href="/contact" class="bg-[#2d6a4f] text-white px-4 py-2 rounded-sm hover:bg-[#1b4332] transition-colors">
               Contact
             </a>
           </li>
         </ul>
       </nav>
       <!-- Menu mobile -->
-      <div id="mobile-menu" class="hidden lg:hidden bg-[#f8f4ee] border-t border-stone-200">
+      <div id="mobile-menu" class="hidden lg:hidden bg-[#f5f0e6] border-t border-stone-200">
         <ul class="flex flex-col px-4 py-4 gap-4 text-sm font-medium tracking-wide uppercase">
-          <li><a href="/" class="block hover:text-[#4a7c59]">Accueil</a></li>
-          <li><a href="/benjamin" class="block hover:text-[#4a7c59]">Le Chef</a></li>
-          <li><a href="/chambre" class="block hover:text-[#4a7c59]">Chambre</a></li>
-          <li><a href="/traiteur" class="block hover:text-[#4a7c59]">Traiteur</a></li>
-          <li><a href="/menu-truffe" class="block hover:text-[#4a7c59]">Menu Truffe</a></li>
-          <li><a href="/contact" class="block hover:text-[#4a7c59]">Contact</a></li>
+          <li><a href="/" class="block hover:text-[#2d6a4f]">Accueil</a></li>
+          <li><a href="/benjamin" class="block hover:text-[#2d6a4f]">Le Chef</a></li>
+          <li><a href="/chambre" class="block hover:text-[#2d6a4f]">Chambre</a></li>
+          <li><a href="/traiteur" class="block hover:text-[#2d6a4f]">Traiteur</a></li>
+          <li><a href="/menu-truffe" class="block hover:text-[#2d6a4f]">Menu Truffe</a></li>
+          <li><a href="/contact" class="block hover:text-[#2d6a4f]">Contact</a></li>
         </ul>
       </div>
     </header>
@@ -84,25 +85,29 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     </main>
 
     <footer class="bg-[#1a1a1a] text-stone-300 mt-20">
-      <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
+      <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div class="flex flex-col items-center md:items-start">
           <img src="/images/logo-blanc.svg" alt="Une Escale Gourmande" class="h-16 w-auto mb-4" />
           <p class="text-sm text-stone-400">Chambre d'hôte, traiteur & chef à domicile<br />au cœur du Périgord Vert</p>
         </div>
-        <div>
+        <div class="flex flex-col items-center md:items-start">
           <h3 class="font-serif text-white text-lg mb-4">Navigation</h3>
           <ul class="space-y-2 text-sm">
             <li><a href="/chambre" class="hover:text-white transition-colors">Chambre d'hôte</a></li>
             <li><a href="/traiteur" class="hover:text-white transition-colors">Traiteur & Chef à domicile</a></li>
             <li><a href="/menu-truffe" class="hover:text-white transition-colors">Menu Truffe</a></li>
-            <li><a href="/benjamin" class="hover:text-white transition-colors">Benjamin Jardin</a></li>
+            <li><a href="/benjamin" class="hover:text-white transition-colors">Le Chef</a></li>
           </ul>
         </div>
-        <div>
+        <div class="flex flex-col items-center md:items-start">
           <h3 class="font-serif text-white text-lg mb-4">Contact</h3>
           <ul class="space-y-2 text-sm">
-            <li>1144 route des calvaires</li>
-            <li>24800 Eyzerac — Périgord Vert</li>
+            <li>
+              <a href={mapsURL} target="_blank" rel="noopener" class="hover:text-white transition-colors flex items-center gap-2 justify-center md:justify-start">
+                <span>📍</span>
+                <span>1144 route des calvaires<br />24800 Eyzerac — Périgord Vert</span>
+              </a>
+            </li>
             <li>
               <a href="tel:+33625142608" class="hover:text-white transition-colors">06 25 14 26 08</a>
             </li>
@@ -117,10 +122,56 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       </div>
     </footer>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[200] bg-black/92 flex items-center justify-center" role="dialog" aria-modal="true">
+      <button id="lb-close" class="absolute top-5 right-6 text-white text-5xl font-thin leading-none hover:text-stone-300 transition-colors" aria-label="Fermer">✕</button>
+      <img id="lb-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain select-none" />
+    </div>
+
     <script>
+      // Mobile menu
       const btn = document.getElementById('menu-btn');
       const menu = document.getElementById('mobile-menu');
       btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+      // Scroll reveal
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+      document.querySelectorAll('main section').forEach(el => {
+        el.classList.add('reveal');
+        revealObserver.observe(el);
+      });
+
+      // Lightbox
+      const lightbox = document.getElementById('lightbox') as HTMLElement | null;
+      const lbImg = document.getElementById('lb-img') as HTMLImageElement | null;
+
+      document.querySelectorAll<HTMLImageElement>('main img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+          if (!lightbox || !lbImg) return;
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          lightbox.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLb() {
+        lightbox?.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('lb-close')?.addEventListener('click', closeLb);
+      lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
     </script>
   </body>
 </html>

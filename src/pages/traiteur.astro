@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from '../layouts/Layout.astro';
 
 const schema = {
@@ -53,15 +53,15 @@ const schema = {
 
         <!-- Traiteur -->
         <div class="border border-stone-200 p-8">
-          <h3 class="font-serif text-2xl mb-4 text-[#4a7c59]">Traiteur</h3>
+          <h3 class="font-serif text-2xl mb-4 text-[#2d6a4f]">Traiteur</h3>
           <p class="text-stone-600 leading-relaxed mb-6">
             Benjamin prépare et livre vos repas, entièrement cuisinés avec des produits frais et locaux. Une solution clé en main pour vos événements, quel que soit le nombre de convives.
           </p>
           <ul class="space-y-2 text-stone-600 text-sm">
-            <li class="flex items-start gap-2"><span class="text-[#4a7c59] mt-1">✓</span> Buffets & cocktails dînatoires</li>
-            <li class="flex items-start gap-2"><span class="text-[#4a7c59] mt-1">✓</span> Repas assis servis</li>
-            <li class="flex items-start gap-2"><span class="text-[#4a7c59] mt-1">✓</span> Brunch & déjeuners</li>
-            <li class="flex items-start gap-2"><span class="text-[#4a7c59] mt-1">✓</span> Livraison et mise en place</li>
+            <li class="flex items-start gap-2"><span class="text-[#2d6a4f] mt-1">✓</span> Buffets & cocktails dînatoires</li>
+            <li class="flex items-start gap-2"><span class="text-[#2d6a4f] mt-1">✓</span> Repas assis servis</li>
+            <li class="flex items-start gap-2"><span class="text-[#2d6a4f] mt-1">✓</span> Brunch & déjeuners</li>
+            <li class="flex items-start gap-2"><span class="text-[#2d6a4f] mt-1">✓</span> Livraison et mise en place</li>
           </ul>
         </div>
 
@@ -96,7 +96,7 @@ const schema = {
         { icon: "🎉", label: "Anniversaires" },
         { icon: "🍂", label: "Menu truffe" },
       ].map(item => (
-        <div class="p-4 bg-[#f8f4ee] hover:bg-[#f0ebe3] transition-colors">
+        <div class="p-4 bg-[#f5f0e6] hover:bg-[#ede7d8] transition-colors">
           <div class="text-3xl mb-2">{item.icon}</div>
           <p class="text-sm font-medium text-stone-700">{item.label}</p>
         </div>
@@ -105,11 +105,11 @@ const schema = {
   </section>
 
   <!-- ZONE + CAPACITÉ -->
-  <section class="bg-[#f0ebe3] py-16">
+  <section class="bg-[#ede7d8] py-16">
     <div class="max-w-4xl mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-center">
         <div>
-          <div class="text-5xl font-serif text-[#4a7c59] mb-3">120</div>
+          <div class="text-5xl font-serif text-[#2d6a4f] mb-3">120</div>
           <p class="font-medium text-stone-700 mb-2">personnes maximum</p>
           <p class="text-stone-500 text-sm">Benjamin s'adapte aussi bien aux petits dîners intimes qu'aux grandes réceptions.</p>
         </div>
@@ -136,12 +136,24 @@ const schema = {
   </section>
 
   <!-- CTA -->
-  <section class="py-16 text-center px-4 bg-white">
-    <h2 class="font-serif text-2xl mb-4">Un projet ? Parlons-en.</h2>
-    <p class="text-stone-600 mb-8 max-w-xl mx-auto">Chaque événement est unique. Contactez Benjamin pour un devis personnalisé selon vos besoins et votre budget.</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="tel:+33625142608" class="inline-block bg-[#4a7c59] text-white px-8 py-3 hover:bg-[#3d6b4c] transition-colors">06 25 14 26 08</a>
-      <a href="/contact" class="inline-block border border-[#4a7c59] text-[#4a7c59] px-8 py-3 hover:bg-[#4a7c59] hover:text-white transition-colors">Formulaire de contact</a>
+  <section class="relative overflow-hidden bg-[#1b4332] py-24 text-center px-4">
+    <div class="absolute inset-0 bg-[url('/images/traiteur-assiettes.jpg')] bg-cover bg-center opacity-10"></div>
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <p class="text-[#52b788] text-sm uppercase tracking-widest mb-4">Devis gratuit</p>
+      <h2 class="font-serif text-3xl md:text-4xl text-white mb-5">Un projet ? Parlons-en.</h2>
+      <p class="text-white/70 mb-10 text-lg">Chaque événement est unique. Benjamin établit un devis personnalisé selon vos besoins, votre lieu et votre budget.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+33625142608" class="inline-block bg-white text-[#1b4332] px-8 py-3 font-semibold hover:bg-[#f5f0e6] transition-colors">
+          📞 06 25 14 26 08
+        </a>
+        <a href="https://wa.me/33625142608?text=Bonjour%20Benjamin%2C%20je%20vous%20contacte%20pour%20un%20projet%20traiteur." target="_blank" rel="noopener"
+          class="inline-block bg-[#25D366] text-white px-8 py-3 font-semibold hover:bg-[#1fba59] transition-colors">
+          WhatsApp
+        </a>
+        <a href="/contact" class="inline-block border border-white/50 text-white px-8 py-3 hover:bg-white/10 transition-colors">
+          Formulaire de contact
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
