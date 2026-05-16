@@ -38,7 +38,7 @@ const schema = {
     <div class="absolute inset-0 bg-black/55"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20"></div>
     <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
-      <img src="/images/logo.svg" alt="Une Escale Gourmande" class="h-40 w-auto mx-auto mb-6 invert drop-shadow-xl" />
+      <img src="/images/logo.svg" alt="Une Escale Gourmande" class="h-52 md:h-72 w-auto mx-auto mb-6 invert drop-shadow-xl" />
       <h1 class="font-serif text-4xl md:text-6xl font-bold mb-4 leading-tight" style="text-shadow: 0 2px 12px rgba(0,0,0,0.7)">
         Une Escale Gourmande
       </h1>
@@ -51,11 +51,14 @@ const schema = {
   </section>
 
   <!-- INTRO -->
-  <section class="max-w-3xl mx-auto px-4 py-20 text-center">
+  <section class="relative overflow-hidden py-20 text-center px-4">
+    <img src="/images/logo.svg" aria-hidden="true" class="absolute inset-0 m-auto w-[360px] opacity-[0.04] pointer-events-none select-none" />
+    <div class="relative z-10 max-w-3xl mx-auto">
     <h2 class="font-serif text-3xl md:text-4xl text-[#1a1a1a] mb-6">Bienvenue dans notre écrin de verdure</h2>
     <p class="text-lg text-stone-600 leading-relaxed">
       Au cœur du Périgord Vert, Benjamin Jardin — cuisinier de métier depuis 20 ans — vous propose une halte gourmande au fil des saisons. Chambre d'hôte, dîners sur place, traiteur pour vos événements ou chef à domicile : chaque prestation est pensée autour de produits locaux soigneusement sélectionnés, du potager et de la truffière.
     </p>
+    </div>
   </section>
 
   <!-- 3 ACTIVITÉS -->
@@ -94,7 +97,9 @@ const schema = {
   </section>
 
   <!-- GALERIE PLATS -->
-  <section class="py-20 max-w-6xl mx-auto px-4">
+  <section class="relative overflow-hidden py-20 px-4">
+    <img src="/images/logo.svg" aria-hidden="true" class="absolute inset-0 m-auto w-[500px] opacity-[0.04] pointer-events-none select-none" />
+    <div class="relative z-10 max-w-6xl mx-auto">
     <h2 class="font-serif text-3xl text-center mb-12">Une cuisine gourmande et engagée</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
       <img src="/images/dessert-myrtille.jpg" alt="Dessert myrtille" class="w-full aspect-square object-cover" />
@@ -102,11 +107,13 @@ const schema = {
       <img src="/images/dessert-tarte-fruits.jpg" alt="Tarte aux fruits rouges" class="w-full aspect-square object-cover" />
       <img src="/images/amuse-bouches.jpg" alt="Amuse-bouches" class="w-full aspect-square object-cover" />
     </div>
+    </div>
   </section>
 
   <!-- MÉDIAS -->
-  <section class="bg-[#ede7d8] py-16">
-    <div class="max-w-4xl mx-auto px-4 text-center">
+  <section class="relative overflow-hidden bg-[#ede7d8] py-16">
+    <img src="/images/logo.svg" aria-hidden="true" class="absolute inset-0 m-auto w-[400px] opacity-[0.05] pointer-events-none select-none" />
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
       <p class="text-sm uppercase tracking-widest text-stone-500 mb-10">Ils parlent de nous</p>
       <div class="flex flex-col sm:flex-row items-stretch justify-center gap-6">
         <a href="https://www.ici.fr/emissions/l-art-de-vivre-en-perigord/a-eyzerac-une-table-d-hotes-celebre-la-truffe-avec-creativite-et-passion-4440710" target="_blank" rel="noopener"
